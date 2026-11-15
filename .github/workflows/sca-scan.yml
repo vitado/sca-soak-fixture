@@ -1,0 +1,23 @@
+name: SCA Scan
+
+# Soak: daily scheduled scan on the engine rc (sca-canary) plus manual runs; the fixer is chained after the scheduled run.
+
+on:
+  schedule:
+    - cron: "45 5 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sca-scan
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  sca:
+    uses: vitado/ai-dial-ci/.github/workflows/sca_scheduled.yml@sca-canary
+    with:
+      repository: vitado/sca-soak-fixture
+      java-version: "17"
