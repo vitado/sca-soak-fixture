@@ -2,5 +2,9 @@
   "name": "soak-fixture",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {"request": "2.88.2"}
+  "dependencies": {"request": "2.88.2"},
+  "overrides": {
+    "form-data@^2.0.0": "^2.5.6",
+    "qs@^6.0.0": "^6.16.0"
+  }
 }
