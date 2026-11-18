@@ -2,5 +2,5 @@
   "name": "soak-fixture",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {"lodash": "4.18.1","minimist": "1.2.5"}
+  "dependencies": {"request": "2.88.2"}
 }
